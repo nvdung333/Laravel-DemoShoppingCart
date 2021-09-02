@@ -18,17 +18,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('/', "App\Http\Controllers\Order@index");
-Route::get('/openmodal/{id?}', "App\Http\Controllers\Order@openmodal");
-Route::get('/cart', "App\Http\Controllers\Cart@index");
-
-Route::post('/cart/add/', 'App\Http\Controllers\Cart@add');
-Route::put('/cart/update/{id}', 'App\Http\Controllers\Cart@update');
-Route::put('/cart/remove/{id}', 'App\Http\Controllers\Cart@remove');
-Route::get('/cart/clear/', 'App\Http\Controllers\Cart@clear');
-
-
-
+Route::get('/', "App\Http\Controllers\OrderController@index");
+Route::get('/cart', "App\Http\Controllers\CartController@index");
+Route::get('/cart/add/{id?}', "App\Http\Controllers\CartController@add");
+Route::post('/cart/store/', 'App\Http\Controllers\CartController@store');
+Route::put('/cart/update/{id}', 'App\Http\Controllers\CartController@update');
+Route::put('/cart/remove/{id}', 'App\Http\Controllers\CartController@remove');
+Route::get('/cart/clear/', 'App\Http\Controllers\CartController@clear');
 
 
 // Check Session

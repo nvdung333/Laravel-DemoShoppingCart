@@ -77,8 +77,8 @@
                     </button>
                 </div>
 
-                <!-- ADD ITEM TO CART -->
-                <form method="post" action="{{ url('cart/add') }}">
+                <!-- STORE ITEM TO CART -->
+                <form method="post" action="{{ url('cart/store') }}">
                     @csrf
                     <div class="modal-body">
                         <input type="hidden" id="ssID" name="ssID" value="">
@@ -121,7 +121,7 @@
         // OPEN MODAL ADD TO CART
         $("body").on("click", ".open-modal", function () {
             var id = $(this).val();
-            var url = "{{ url('/openmodal/') }}"+"/";
+            var url = "{{ url('/cart/add/') }}"+"/";
             // console.log(id);
             $.get(url+id, function(data) {
                 // console.log(data);
